@@ -1,3 +1,4 @@
+
 ln -s $HOME/my-dotfiles/nvim ~/.config
 ln -s $HOME/my-dotfiles/alacritty.yml ~/.config
 ln -s $HOME/my-dotfiles/starship.toml ~/.config
