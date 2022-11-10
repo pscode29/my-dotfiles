@@ -1,0 +1,94 @@
+" Watch this playlist = https://www.youtube.com/playlist?list=PLYDrCnplQfmG2aoNeu5_RP3GfcBiD1wl7
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Options
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Enable relative line number
+set number relativenumber
+set idearefactormode=keep
+set ideajoin
+" Silent the bell sound on wrong press
+set visualbell
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Key Mappings
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Map Space as leader key
+let mapleader = " "
+" Escape insert mode with jk
+inoremap jk <Esc>
+" Speed of pressing jk or any other key combination for a shortcut e.g. leader e
+set timeoutlen=1000
+" Escape visual mode with jk
+vnoremap jk <Esc>
+" Reload ideavimrc file with \r
+nnoremap \r :action IdeaVim.ReloadVimRc.reload<CR>
+
+vnoremap < <gv
+vnoremap > >gv
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" CTRL based keymaps
+" Move lines up and down in Normal, Insert mode, I am not able to to this in Ideavim for multiple lines
+" Hence for multiple lines I still resort to ALT+SHIFT Up and Down (the Intellij way)
+nnoremap <C-j> :m +1<CR>
+nnoremap <C-k> :m -2<CR>
+inoremap <C-j> <Esc>:m +1<CR>gi
+inoremap <C-k> <Esc>:m -2<CR>gi
+
+" Toggle focus mode
+nnoremap <C-f> :action ToggleDistractionFreeMode<CR>
+" Launch terminal in root project dir
+nnoremap <C-t> :action ActivateTerminalToolWindow<CR>
+nmap <C-h> :action PreviousTab<CR>
+nmap <C-l> :action NextTab<CR>
+" CTRL l to jump end of line from insert mode, and CTRL h to beginning of the line from insert mode
+" I use it when I am inside "" or () or {} or [] etc, I love it
+inoremap <C-l> <C-o>A
+inoremap <C-h> <C-o>I
+
+" Use < and > to indent
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Leader based mappings
+" Open in terminal(launches a new terminal in the dir of current file for every press)
+nnoremap <leader>t :action Terminal.OpenInTerminal<CR>
+" Save all changes
+nnoremap <leader>s :action SaveAll<CR>
+nnoremap <leader>q :action CloseEditor<CR>
+nnoremap <leader>f :action GotoFile<CR>
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" NERDTree
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set NERDTree
+" Open the NERDTree window
+map <leader>e :NERDTree<CR>
+" Close the NERDTree window with q or Esc
+" Reference - https://github.com/JetBrains/ideavim/blob/master/doc/NERDTree-support.md
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Multiple cursors
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set multiple-cursors
+" Reference - https://stackoverflow.com/questions/55202799/ideavim-multi-cursor-usage
+" If cursor is at a word, C-n will select the word with multiple cursors with each press
+" If cursor is at a symbol like < or space then first select the symbol with visual v and then C-n to select next occurrences
+nmap <C-n> <Plug>NextWholeOccurrence
+xmap <C-n> <Plug>NextWholeOccurrence
+" Skip current occurrences
+nmap <C-x> <Plug>SkipOccurrence
+xmap <C-x> <Plug>SkipOccurrence
+" Deselect current occurrence
+nmap <C-p> <Plug>RemoveOccurrence
+xmap <C-p> <Plug>RemoveOccurrence
+" Select all occurrences at once
+nmap <S-C-n> <Plug>AllWholeOccurrences
+xmap <S-C-n> <Plug>AllWholeOccurrences
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" IDEA Settings
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" 1. Advanced settings -> Distraction free mode left margin 20 pixels (default is -1 which puts the editor in center
+" during  distraction free mode)
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" IDE Tips
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" 1. Shift Shift -> Actions -> Track Action IDs -> To track actions which you can map in .ideavimrc
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+
