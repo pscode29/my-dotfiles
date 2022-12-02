@@ -9,6 +9,7 @@ for _, source in ipairs {
     "plugins.nvim-treesitter",
     "plugins.lualine",
     "plugins.gitsigns",
+    "plugins.mason",
   } do
     local ok, fault = pcall(require, source)
     if not ok then

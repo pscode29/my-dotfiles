@@ -51,8 +51,19 @@ packer.startup({function(use)
     }
     -- Statusline
     use "nvim-lualine/lualine.nvim"
-   -- git signs
-   use "lewis6991/gitsigns.nvim"
+    -- git signs
+    use "lewis6991/gitsigns.nvim"
+    -- LSP installer
+    use("williamboman/mason.nvim") -- This plugin lets you install and manage LSP servers
+    use("williamboman/mason-lspconfig.nvim") -- Links mason and lspconfig plugins
+    use("jayp0521/mason-null-ls.nvim") -- Links mason and null-ls
+
+
+
+
+
+
+
 
     if packer_bootstrap then
       require("packer").sync()
