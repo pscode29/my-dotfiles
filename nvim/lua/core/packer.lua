@@ -27,57 +27,60 @@ if not ok then
 end
 
 -- Define plugins that packer should install
-packer.startup({function(use)
-    -- Packer install packer kind of thing
-    use "wbthomason/packer.nvim"
-    -- Lua functions
-    use "nvim-lua/plenary.nvim"
-    -- Popup API
-    use "nvim-lua/popup.nvim"
-    -- Icons
-    use "kyazdani42/nvim-web-devicons"
-    -- Colorschemes
-    use 'folke/tokyonight.nvim'
-    -- Telescope - the awesome fuzzy finder
-    use "nvim-telescope/telescope.nvim"
-    -- File Explorer
-    use "nvim-tree/nvim-tree.lua"
-    -- Comment
-    use "numToStr/Comment.nvim"
-    -- Treesitter - this enables better syntax highlighting among other things
-    use {
-      "nvim-treesitter/nvim-treesitter",
-      run = ":TSUpdate",
-    }
-    -- Statusline
-    use "nvim-lualine/lualine.nvim"
-    -- git signs
-    use "lewis6991/gitsigns.nvim"
-    -- LSP installer
-    use("williamboman/mason.nvim") -- This plugin lets you install and manage LSP servers
-    use("williamboman/mason-lspconfig.nvim") -- Links mason and lspconfig plugins
-    use("jayp0521/mason-null-ls.nvim") -- Links mason and null-ls
+packer.startup({
+	function(use)
+		-- Packer install packer kind of thing
+		use("wbthomason/packer.nvim")
+		-- Lua functions
+		use("nvim-lua/plenary.nvim")
+		-- Popup API
+		use("nvim-lua/popup.nvim")
+		-- Icons
+		use("kyazdani42/nvim-web-devicons")
+		-- Colorschemes
+		use("folke/tokyonight.nvim")
+		-- Telescope - the awesome fuzzy finder
+		use("nvim-telescope/telescope.nvim")
+		-- File Explorer
+		use("nvim-tree/nvim-tree.lua")
+		-- Comment
+		use("numToStr/Comment.nvim")
+		-- Treesitter - this enables better syntax highlighting among other things
+		use({
+			"nvim-treesitter/nvim-treesitter",
+			run = ":TSUpdate",
+		})
+		-- Statusline
+		use("nvim-lualine/lualine.nvim")
+		-- Git signs
+		use("lewis6991/gitsigns.nvim")
+		-- Autocompletion
+		use("hrsh7th/nvim-cmp") -- Enables auto completion
+		use("hrsh7th/cmp-buffer") -- Buffer as completion source
+		use("hrsh7th/cmp-path") -- File system path as completion source
+		use("hrsh7th/cmp-nvim-lsp") -- LSP as completion source
+		use("onsails/lspkind.nvim") -- VS Code icons for autocompletion
+		-- LSP, Linters and Formatter
+		use("williamboman/mason.nvim") -- This plugin lets you install and manage LSP servers
+		use("williamboman/mason-lspconfig.nvim") -- Links mason and lspconfig plugins
+		use("jayp0521/mason-null-ls.nvim") -- Links mason and null-ls
+		use("neovim/nvim-lspconfig") -- Configure your language servers
+		use({ "glepnir/lspsaga.nvim", branch = "main" }) -- for better LSP UI
+		use("jose-elias-alvarez/null-ls.nvim") -- Configure formatters & linters
 
+		if packer_bootstrap then
+			require("packer").sync()
+		end
+	end,
 
-
-
-
-
-
-
-    if packer_bootstrap then
-      require("packer").sync()
-    end
-  end,
-
--- following config gives packer a rounded pop window
-  config = {
-    display = {
-      open_fn = function()
-        return require("packer.util").float { border = "rounded" }
-      end,
-    }
-  },
+	-- following config gives packer a rounded pop up window
+	config = {
+		display = {
+			open_fn = function()
+				return require("packer.util").float({ border = "rounded" })
+			end,
+		},
+	},
 })
 --------------------------------------- Command reference ------------------------------------
 -- Regenerate compiled loader file

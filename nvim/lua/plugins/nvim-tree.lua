@@ -1,6 +1,6 @@
 local ok, nvimtree = pcall(require, "nvim-tree")
 if not ok then
-  return
+	return
 end
 
 -- disable netrw
@@ -14,4 +14,3 @@ vim.cmd([[ highlight NvimTreeFolderIcon guifg=#32a891 ]])
 vim.opt.termguicolors = true
 
 nvimtree.setup()
-
