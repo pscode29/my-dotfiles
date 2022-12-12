@@ -54,6 +54,9 @@ nnoremap <leader>t :action Terminal.OpenInTerminal<CR>
 nnoremap <leader>s :action SaveAll<CR>
 nnoremap <leader>q :action CloseEditor<CR>
 nnoremap <leader>f :action GotoFile<CR>
+
+" Run class
+noremap <leader>r :action RunClass<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " NERDTree
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
