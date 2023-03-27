@@ -1,4 +1,7 @@
 " Watch this playlist = https://www.youtube.com/playlist?list=PLYDrCnplQfmG2aoNeu5_RP3GfcBiD1wl7
+" With new MacOS upgrade, long pressing j and k is not moving the cursor. Run the following command in terminal to fix
+" the issue -
+" $ defaults write -g ApplePressAndHoldEnabled -bool false
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Options
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -20,10 +23,10 @@ inoremap jk <Esc>
 set timeoutlen=1000
 " Escape visual mode with jk
 vnoremap jk <Esc>
-" Reload ideavimrc file with \r
+" Reload ideavimrc file with \j
 nnoremap \r :action IdeaVim.ReloadVimRc.reload<CR>
 
-vnoremap < <gv
+vnoremap < <jv
 vnoremap > >gv
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -50,7 +53,7 @@ inoremap <C-h> <C-o>I
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Leader based mappings
 " Open in terminal(launches a new terminal in the dir of current file for every press)
-nnoremap <leader>t :action Terminal.OpenInTerminal<CR>
+"nnoremap <leader>t :action Terminal.OpenInTerminal<CR>
 " Save all changes
 nnoremap <leader>s :action SaveAll<CR>
 nnoremap <leader>q :action CloseEditor<CR>
@@ -94,5 +97,3 @@ xmap <S-C-n> <Plug>AllWholeOccurrences
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 1. Shift Shift -> Actions -> Track Action IDs -> To track actions which you can map in .ideavimrc
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-
