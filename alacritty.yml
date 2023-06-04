@@ -36,23 +36,28 @@ scrolling:
 font:
   # Normal (roman) font face
   normal:
-    family: FiraCode Nerd Font
-    style: Retina
+    family: JetBrainsMono Nerd Font
+    # family: Rec Mono Casual
+    # style: Regular
+    style: Bold
 
   # Bold font face
   bold:
-    family: FiraCode Nerd Font
+    family: JetBrainsMono Nerd Font
+    # family: Rec Mono Casual
     style: Bold
 
   # Italic font face
   italic:
-    family: FiraCode Nerd Font
-    style: Retina
+    family: JetBrainsMono Nerd Font
+    # family: Rec Mono Casual
+    style: Bold Italic 
 
   # Bold italic font face
   bold_italic:
-    family: FiraCode Nerd Font
-    style: Bold
+    family: JetBrainsMono Nerd Font
+    # family: Rec Mono Casual
+    style: Bold Italic
 
   # Point size
   size: 18.0 
@@ -63,11 +68,6 @@ font:
   offset:
    x: 0
    y: 8 
-
-  # Thin stroke font rendering (macOS only)
-  # Thin strokes are suitable for retina displays, but for non-retina screens
-  # it is recommended to set `use_thin_strokes` to `false`.
-  use_thin_strokes: true
 
 # If `true`, bold text is drawn using the bright color variants.
 draw_bold_text_with_bright_colors: true
