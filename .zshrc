@@ -1,10 +1,11 @@
 ###############################################################################
-# go settings:
+# go settings: Following GOLANG settings are NOT NEEDED after I think Go v1.11 
 ###############################################################################
 # GOPATH is the path of `go worskpace` where go install installs dependencies
-export GOPATH="$HOME/go"
+# export GOPATH="$HOME/go"
 # Add GOPATH/bin to $PATH
-path+=("$GOPATH/bin") # To append any path to $PATH use this syntax, to prepend simply use path=('somepath')
+# path+=("$GOPATH/bin") # To append any path to $PATH use this syntax, 
+#                         to prepend simply use path=('somepath')
 ###############################################################################
 # pyenv settings:
 ###############################################################################
