@@ -19,9 +19,6 @@ M.general = {
 			"exit all windows without save",
 		},
 	},
-	v = {
-		[">"] = { ">gv", "indent" },
-	},
 }
 
 M.dap = {

@@ -2,6 +2,20 @@ local overrides = require("custom.configs.overrides")
 
 ---@type NvPluginSpec[]
 local plugins = {
+	-- For html auto tag
+	{
+		"windwp/nvim-ts-autotag",
+		ft = {
+			"javascript",
+			"javascriptreact",
+			"typescript",
+			"typescriptreact",
+			"html",
+		},
+		config = function()
+			require("nvim-ts-autotag").setup()
+		end,
+	},
 	{
 		"christoomey/vim-tmux-navigator",
 		lazy = false,
@@ -11,9 +25,12 @@ local plugins = {
 		dependencies = {
 			-- format & linting
 			{
-				"jose-elias-alvarez/null-ls.nvim",
-				config = function()
-					require("custom.configs.null-ls")
+				-- "jose-elias-alvarez/null-ls.nvim",
+				-- Replacing null-ls with none-ls
+				"nvimtools/none-ls.nvim",
+				event = "VeryLazy",
+				opts = function()
+					return require("custom.configs.null-ls")
 				end,
 			},
 		},
@@ -29,7 +46,14 @@ local plugins = {
 		opts = overrides.mason,
 	},
 
-	{},
+	{
+		"nvim-treesitter/nvim-treesitter",
+		opts = function()
+			local opts = require("plugins.configs.treesitter")
+			opts.ensure_installed = overrides.treesitter.ensure_installed
+			return opts
+		end,
+	},
 
 	{
 		"nvim-tree/nvim-tree.lua",

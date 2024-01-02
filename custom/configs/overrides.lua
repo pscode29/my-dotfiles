@@ -15,6 +15,10 @@ M.treesitter = {
 		"markdown",
 		"markdown_inline",
 	},
+	highlight = {
+		enable = true,
+		use_languagetree = true,
+	},
 	indent = {
 		enable = true,
 		-- disable = {
@@ -32,10 +36,15 @@ M.mason = {
 		-- web dev stuff
 		"css-lsp",
 		"html-lsp",
+		-- typescript, javascript, tsx, jsx LSP
 		"typescript-language-server",
 		"deno",
-		"prettier",
-		"eslint_d",
+		-- formatter
+		"prettierd",
+		-- linter
+		"eslint-lsp",
+		-- tailwind LSP
+		"tailwindcss-language-server",
 
 		-- c/cpp stuff
 		-- "clangd",
